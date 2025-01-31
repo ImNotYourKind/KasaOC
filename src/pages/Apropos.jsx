@@ -5,9 +5,8 @@ function Apropos() {
 
   return (
     <div>
-      <h1>A Propos</h1>
-      <button onClick={() => navigate('/')}>Retour à l'accueil</button>
-      <button onClick={() => navigate('/Location')}>Location</button>
+  
+      
     </div>
   );
 }

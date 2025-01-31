@@ -1,13 +1,9 @@
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 
 function Location() {
-  const navigate = useNavigate();
-
   return (
     <div>
-      <h1>Location</h1>
-      <button onClick={() => navigate('/')}>Retour à l'accueil</button>
-      <button onClick={() => navigate('/Apropos')}>A Propos</button>
+      <h2>Page Location</h2>
     </div>
   );
 }

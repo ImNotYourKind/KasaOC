@@ -1,0 +1,25 @@
+.apropos {
+    padding: 0 100px;
+}
+
+.apropos-content {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.dropdowns-container {
+    max-width: 1023px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .apropos {
+        padding: 0 20px;
+    }
+
+    .apropos-content {
+        padding: 20px 0;
+    }
+}

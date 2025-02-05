@@ -1,38 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import falaises from '../assets/falaises.png';
-import './accueil.css';
+import LocationCard from '../components/LocationCard/LocationCard';
+import Banner from '../components/Banner/Banner';
+import './Accueil.css';
 
 function Accueil() {
   const navigate = useNavigate();
+  const [locations, setLocations] = useState([]);
 
-  const locations = Array(6).fill({
-    title: 'Titre de la location',
-    image: '#FF6060'
-  });
-
-  const handleLocationClick = () => {
-    navigate('/location');
-  };
+  useEffect(() => {
+    fetch('http://localhost:8080/api/properties')
+      .then(response => response.json())
+      .then(data => setLocations(data))
+      .catch(error => console.error('Erreur lors de la récupération des propriétés:', error));
+  }, []);
 
   return (
     <div className="accueil">
       <main className="main-content">
-        <div className="banner">
-          <img src={falaises} alt="Falaises" className="banner-image" />
-          <h1 className="banner-text">Chez vous, partout et ailleurs</h1>
-        </div>
+        <Banner 
+          image={falaises}
+          text="Chez vous, partout et ailleurs"
+          alt="Falaises"
+        />                       
 
         <div className="grid-container">
-          {locations.map((location, index) => (
-            <div 
-              key={index} 
-              className="grid-item" 
-              style={{backgroundColor: location.image}}
-              onClick={handleLocationClick}
-            >
-              <h3 className="location-title">{location.title}</h3>
-            </div>
+          {locations.map((location) => (
+            <LocationCard 
+              key={location.id}
+              title={location.title}
+              image={location.cover}
+            />
           ))}
         </div>
       </main>

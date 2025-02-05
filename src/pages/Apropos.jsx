@@ -27,7 +27,7 @@ function Apropos() {
   return (
     <div className="apropos">
       <main className="apropos-content">
-        <div className="about-banner">
+        <div className="apropos-banner">
           <Banner image={montagnes} alt="Montagnes" />
         </div>
         <div className="dropdowns-container">

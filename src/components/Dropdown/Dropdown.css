@@ -29,14 +29,8 @@
 
 .dropdown-content {
     background-color: #F6F6F6;
-    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-}
-
-.dropdown-content.open {
-    max-height: 500px;
-    padding: 20px;
+    transition: height 0.3s ease, padding 0.3s ease;
     border-radius: 0 0 5px 5px;
 }
 
@@ -62,9 +56,9 @@
 }
 
 .dropdown-content p,
-    .dropdown-list li {
-        font-size: 19px;
-    }
+.dropdown-list li {
+    font-size: 19px;
+}
 
 @media (max-width: 768px) {
     .dropdown-header h2 {
@@ -73,6 +67,6 @@
 
     .dropdown-content p,
     .dropdown-list li {
-        font-size: 12px;
+        font-size: 14px;
     }
 }

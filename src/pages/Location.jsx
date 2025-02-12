@@ -10,29 +10,12 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 function Location() {
   const { id } = useParams();
   const [property, setProperty] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchProperty = async () => {
-      try {
-        const response = await fetch(`http://localhost:8080/api/properties`);
-        if (!response.ok) {
-          throw new Error('Properties not found');
-        }
+        const response = await fetch(`http://localhost:8080/api/properties/${id}`);
         const data = await response.json();
-        const propertyData = data.find(p => p.id === id);
-        
-        if (!propertyData) {
-          throw new Error('Property not found');
-        }
-        
-        setProperty(propertyData);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
+        setProperty(data);
     };
 
     fetchProperty();

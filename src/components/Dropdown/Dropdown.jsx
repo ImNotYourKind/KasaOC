@@ -1,8 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './Dropdown.css';
 
 function Dropdown({ title, content }) {
   const [isOpen, setIsOpen] = useState(false);
+  const contentRef = useRef(null);
+  const [contentHeight, setContentHeight] = useState(0);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      const height = contentRef.current.scrollHeight;
+      setContentHeight(height);
+    }
+  }, [content]);
+
+  const contentStyle = {
+    height: isOpen ? contentHeight + 'px' : '0px',
+    padding: isOpen ? '20px' : '0px'
+  };
 
   const renderContent = () => {
     if (Array.isArray(content)) {
@@ -27,7 +41,11 @@ function Dropdown({ title, content }) {
           </svg>
         </span>
       </div>
-      <div className={`dropdown-content ${isOpen ? 'open' : ''}`}>
+      <div 
+        ref={contentRef}
+        className="dropdown-content"
+        style={contentStyle}
+      >
         {renderContent()}
       </div>
     </div>

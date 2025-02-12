@@ -1,0 +1,24 @@
+.rating {
+    display: flex;
+    gap: 10px;
+}
+
+.star {
+    width: 25px !important;
+    height: 25px;
+}
+
+.star.filled {
+    color: #FF6060;
+}
+
+.star.empty {
+    color: #E3E3E3;
+}
+
+@media (max-width: 768px) {
+    .star {
+        width: 15px !important;
+        height: 15px;
+    }
+}

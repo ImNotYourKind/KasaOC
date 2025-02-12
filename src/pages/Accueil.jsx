@@ -29,6 +29,7 @@ function Accueil() {
           {locations.map((location) => (
             <LocationCard 
               key={location.id}
+              id={location.id}
               title={location.title}
               image={location.cover}
             />

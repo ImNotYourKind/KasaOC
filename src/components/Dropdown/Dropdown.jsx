@@ -4,6 +4,19 @@ import './Dropdown.css';
 function Dropdown({ title, content }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  const renderContent = () => {
+    if (Array.isArray(content)) {
+      return (
+        <ul className="dropdown-list">
+          {content.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      );
+    }
+    return <p>{content}</p>;
+  };
+
   return (
     <div className="dropdown">
       <div className="dropdown-header" onClick={() => setIsOpen(!isOpen)}>
@@ -15,11 +28,7 @@ function Dropdown({ title, content }) {
         </span>
       </div>
       <div className={`dropdown-content ${isOpen ? 'open' : ''}`}>
-        {typeof content === 'string' ? (
-          <p>{content}</p>
-        ) : (
-          content
-        )}
+        {renderContent()}
       </div>
     </div>
   );

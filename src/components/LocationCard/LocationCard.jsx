@@ -2,11 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LocationCard.css';
 
-function LocationCard({ title, image }) {
+function LocationCard({ id, title, image }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/location');
+    navigate(`/location/${id}`);
   };
 
   return (

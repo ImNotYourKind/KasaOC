@@ -23,6 +23,11 @@
     transition: transform 0.3s ease;
 }
 
+.dropdown-arrow svg {
+    width: 24px;
+    height: 14px;
+}
+
 .dropdown-arrow.rotated {
     transform: rotate(180deg);
 }
@@ -62,11 +67,20 @@
 
 @media (max-width: 768px) {
     .dropdown-header h2 {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .dropdown-content p,
     .dropdown-list li {
-        font-size: 14px;
+        font-size: 15px;
+    }
+
+    .dropdown-header {
+        padding: 6px 20px;
+    }
+
+    .dropdown-arrow svg {
+        width: 18px;
+        height: 10px;
     }
 }

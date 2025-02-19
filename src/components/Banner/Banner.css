@@ -36,6 +36,7 @@
   .banner {
     height: 111px;
     margin-bottom: 22px;
+    border-radius: 10px;
   }
 
   .about-banner {

@@ -30,7 +30,7 @@ function Apropos() {
         <div className="apropos-banner">
           <Banner image={montagnes} alt="Montagnes" />
         </div>
-        <div className="dropdowns-container">
+        <div className="apropos-container">
           {dropdownData.map((item, index) => (
             <Dropdown key={index} title={item.title} content={item.content} />
           ))}

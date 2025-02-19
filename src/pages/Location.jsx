@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import './Location.css';
 import Carousel from '../components/Carousel/Carousel';
 import Tag from '../components/Tag/Tag';
@@ -10,12 +10,21 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 function Location() {
   const { id } = useParams();
   const [property, setProperty] = useState(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchProperty = async () => {
+      try {
         const response = await fetch(`http://localhost:8080/api/properties/${id}`);
+        if (!response.ok) {
+          setError(true);
+          return;
+        }
         const data = await response.json();
         setProperty(data);
+      } catch (err) {
+        setError(true);
+      }
     };
 
     fetchProperty();
@@ -31,10 +40,14 @@ function Location() {
     ));
   };
 
+  if (error) {
+    return <Navigate to="/404" />;
+  }
+
   if (!property) return null;
 
   return (
-    <div className="location-container">
+    <main className="location-container">
       <Carousel images={property.pictures} />
       
       <div className="location-header">
@@ -73,7 +86,7 @@ function Location() {
           content={property.equipments}
         />
       </div>
-    </div>
+    </main>
   );
 }
 

@@ -2,16 +2,15 @@
     background-color: #FF6060;
     color: white;
     padding: 3px 30px;
-    border-radius: 10px;
+    border-radius: 8px;
     font-size: 14px;
     display: inline-block;
     margin-right: 10px;
-    margin-bottom: 10px;
 }
 
 @media (max-width: 768px) {
     .tag {
-        font-size: 10px;
-        padding: 2px 20px;
+        font-size: 11px;
+        padding: 3px 25px;
     }
 }

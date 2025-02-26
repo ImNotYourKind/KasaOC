@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
-import './Location.css';
+import '../styles/Location.css';
 import Carousel from '../components/Carousel/Carousel';
 import Tag from '../components/Tag/Tag';
 import Dropdown from '../components/Dropdown/Dropdown';

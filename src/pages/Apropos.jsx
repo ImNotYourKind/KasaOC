@@ -2,7 +2,7 @@ import React from 'react';
 import Banner from '../components/Banner/Banner';
 import Dropdown from '../components/Dropdown/Dropdown';
 import montagnes from '../assets/montagnes.png';
-import './apropos.css';
+import '../styles/apropos.css';
 
 function Apropos() {
   const dropdownData = [

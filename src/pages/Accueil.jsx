@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import falaises from '../assets/falaises.png';
 import LocationCard from '../components/LocationCard/LocationCard';
 import Banner from '../components/Banner/Banner';
-import './Accueil.css';
+import '../styles/Accueil.css';
 
 function Accueil() {
   const navigate = useNavigate();

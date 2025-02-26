@@ -8,7 +8,6 @@
     margin-top: 23px;
 }
 
-/* Styles de la grille */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -19,22 +18,25 @@
     margin-bottom: 43px;
 }
 
-/* Media queries */
 @media (max-width: 992px) {
     .grid-container {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 30px;
         padding: 0px;
         background-color: white;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     .accueil {
         padding: 0 20px;
     }
 
     .main-content {
         margin-top: 16px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
     }
 }

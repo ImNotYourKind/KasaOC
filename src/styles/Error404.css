@@ -38,14 +38,16 @@
 @media (max-width: 768px) {
     .error-title {
         font-size: 96px;
+        margin-top: 40px;
     }
 
     .error-text {
         font-size: 18px;
+        
     }
 
     .error-link {
         font-size: 14px;
-        margin-top: 50px;
+        margin-top: 53px;
     }
 }
